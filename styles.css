@@ -1,0 +1,550 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 65px;
+  color: #000000;
+}
+
+h2 {
+  font-size: 45px;
+  line-height: 55px;
+  color: #000000;
+}
+
+h4 {
+  font-size: 20px;
+  color: #000000;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+p {
+  font-size: 16px;
+  color: rgb(40, 43, 45);
+  margin: 15px 0 20px 0;
+}
+
+.section-p1 {
+  padding: 40px 80px;
+}
+
+.section-m1 {
+  margin: 40px 0;
+}
+
+body {
+  width: 100%;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background: #c9eaff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+}
+
+#navbar li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0c0a1f;
+  transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+  color: #00a3ff;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+  content: "";
+  width: 30%;
+  height: 2px;
+  background: #00a3ff;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+
+#description {
+  background-image: url('imgbg.png');
+  height: 90vh;
+  width: 100%;
+  background-size: cover;
+  background-position: top 25% right 0;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#description h4 {
+  padding-bottom: 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #88c1db;
+}
+
+#description h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  background-image: linear-gradient(to right, #3c6070, #33b9c5, #8cb9f9, #979ef9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#description h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: #8acae6;
+}
+
+#description button {
+  background-image: url('button.png');
+  background-color: transparent;
+  color: #053f58;
+  border: 0;
+  padding: 30px 90px 10px 70px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+#categ {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#categ .categ-box {
+  width: 180px;
+  text-align: center;
+  padding: 25px 15px;
+  box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+  border: 3px solid #ccdde7;
+  border-radius: 4px;
+  margin: 15px 0;
+}
+
+#categ .categ-box:hover {
+  box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.1);
+}
+
+#categ .categ-box img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#categ .categ-box h6 {
+  display: inline-block;
+  padding: 9px 8px 6px 8px;
+  line-height: 1;
+  border-radius: 4px;
+  color: #62aece;
+  background-color: #ddfdf3;
+}
+
+#categ .categ-box:nth-child(2) h6 {
+  background-color: #d4f2d1;
+}
+
+#categ .categ-box:nth-child(3) h6 {
+  background-color: #f0f2d1;
+}
+
+#categ .categ-box:nth-child(4) h6 {
+  background-color: #f6dbf6;
+}
+
+/*Shop*/
+#shop-header {
+  background-image: url('imgbg1.png');
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 14px;
+}
+
+#shop-header h2,
+#shop-header p {
+  color: #fff;
+}
+
+#product1 {
+  text-align: center;
+}
+
+#product1 .pro-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+
+#product1 .pro {
+  width: 23%;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 3px solid #cce0e7;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+  margin: 15px 0;
+  transition: 0.2s ease;
+  position: relative;
+}
+
+#product1 .pro:hover {
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+#product1 .pro img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+#product1 .pro .desc {
+  text-align: start;
+  padding: 10px 0;
+}
+
+#product1 .pro .desc span {
+  color: #606063;
+  font-size: 12px;
+}
+
+#product1 .pro .desc h5 {
+  padding-top: 7px;
+  color: #0c0a1f;
+  font-size: 14px;
+}
+
+#product1 .pro .desc i {
+  font-size: 12px;
+}
+
+#product1 .pro .desc h4 {
+  padding-top: 7px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #3c6070;
+}
+
+#product1 .pro a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50px;
+  background-color: #e8f4f6;
+  font-weight: 500;
+  color: #02304a;
+  border: 1px solid #cce0e7;
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+}
+
+
+#product2 {
+  text-align: center;
+}
+
+#product2 .pro-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+
+#product2 .pro {
+  width: 23%;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 3px solid #cce0e7;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+  margin: 15px 0;
+  transition: 0.2s ease;
+  position: relative;
+}
+
+#product2 .pro:hover {
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+#product2 .pro img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+#product2 .pro .desc {
+  text-align: start;
+  padding: 10px 0;
+}
+
+#product2 .pro .desc span {
+  color: #606063;
+  font-size: 12px;
+}
+
+#product2 .pro .desc h5 {
+  padding-top: 7px;
+  color: #0c0a1f;
+  font-size: 14px;
+}
+
+#product2 .pro .desc i {
+  font-size: 12px;
+}
+
+#product2 .pro .desc h4 {
+  padding-top: 7px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #3c6070;
+}
+
+#product2 .pro a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50px;
+  background-color: #e8f4f6;
+  font-weight: 500;
+  color: #02304a;
+  border: 1px solid #cce0e7;
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+}
+
+#product3 {
+  text-align: center;
+}
+
+#product3 .pro-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+
+#product3 .pro {
+  width: 23%;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 3px solid #cce0e7;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+  margin: 15px 0;
+  transition: 0.2s ease;
+  position: relative;
+}
+
+#product3 .pro:hover {
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+#product3 .pro img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+#product3 .pro .desc {
+  text-align: start;
+  padding: 10px 0;
+}
+
+#product3 .pro .desc span {
+  color: #606063;
+  font-size: 12px;
+}
+
+#product3 .pro .desc h5 {
+  padding-top: 7px;
+  color: #0c0a1f;
+  font-size: 14px;
+}
+
+#product3 .pro .desc i {
+  font-size: 12px;
+}
+
+#product3 .pro .desc h4 {
+  padding-top: 7px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #3c6070;
+}
+
+#product3 .pro a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50px;
+  background-color: #e8f4f6;
+  font-weight: 500;
+  color: #02304a;
+  border: 1px solid #cce0e7;
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+}
+
+#product4 {
+  text-align: center;
+}
+
+#product4 .pro-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+
+#product4 .pro {
+  width: 23%;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 3px solid #cce0e7;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+  margin: 15px 0;
+  transition: 0.2s ease;
+  position: relative;
+}
+
+#product4 .pro:hover {
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+#product4 .pro img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+#product4 .pro .desc {
+  text-align: start;
+  padding: 10px 0;
+}
+
+#product4 .pro .desc span {
+  color: #606063;
+  font-size: 12px;
+}
+
+#product4 .pro .desc h5 {
+  padding-top: 7px;
+  color: #0c0a1f;
+  font-size: 14px;
+}
+
+#product4 .pro .desc i {
+  font-size: 12px;
+}
+
+#product4 .pro .desc h4 {
+  padding-top: 7px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #3c6070;
+}
+
+#product4 .pro a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50px;
+  background-color: #e8f4f6;
+  font-weight: 500;
+  color: #02304a;
+  border: 1px solid #cce0e7;
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+}
+
+/*About*/
+#shop-header .about-header {
+  background-image: url('imgbg2.png');
+}
+
+#about {
+  padding: 150px 150px 0 150px;
+}
+
+#about .about-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  padding-bottom: 90px;
+}
+
+#about .about-img {
+  width: 50%;
+  margin-right: 40px;
+}
+
+#about img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+#about .about-details {
+  width: 50%;
+}
+
+#about .about-box h1 {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  font-size: 70px;
+  font-weight: 700;
+  color: #95daf8;
+  z-index: -9;
+}

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science 4th Quarter SA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" >
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #cae6ff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #1b85b8;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .dropdown {
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .dropdown button {
+            background-color: #6699cc;
+            color: #fff;
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            text-align: left;
+        }
+
+        .dropdown button:hover {
+            background-color: #5380ad;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .dropdown-content.show {
+            display: block;
+        }
+
+        .dropdown-content .product {
+            background-color: #fff;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .dropdown-content .product img {
+            max-width: 100px;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        .dropdown-content .product div {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        .product-details {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .product-details img {
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .product-details button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-details button:hover {
+            background-color: #0056b3;
+        }
+
+        .cart {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .cart h3 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .cart ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cart li {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .cart p {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .cart button {
+            background-color: #6699cc;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .cart button:hover {
+            background-color: #5380ad;
+        }
+
+        #order-summary {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        #order-summary h3 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .checkout-form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .checkout-form input {
+            font-size: 18px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+
+        .checkout-form button {
+            background-color: #6699cc;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .checkout-form button:hover {
+            background-color: #5380ad;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <a href="#"><img src="namelogo-removebg-preview.png" class="logo" alt="logo name"></a>
+
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#"><i class="fa-solid fa-cart-shopping" style="color: #5d7ecb;"></i></a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="shop-header" class="about-header" style="background-image: url('imgbg4.png');">
+        <h2>#ourelectronicz</h2>
+
+        <p>Here are our electronicz! Buy Now! 🤗🔥</p>
+    </section>
+
+
+    <div class="container">
+
+        <div class="dropdown">
+            <button onclick="toggleDropdown('laptops')">Laptops</button>
+            <div class="dropdown-content" id="laptops">
+
+                <div class="product">
+                    <img src="laptop1.png" alt="Mjolnir Laptop">
+                    <div>
+                        <h3>Mjolnir Laptop</h3>
+                        <p>1440x900, Windows 14, Intel Core i5</p>
+                        <p>Php 50,999</p>
+                        <button onclick="addToCart(7)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="laptop2.png" alt="Mjolnir Laptop GetThored">
+                    <div>
+                        <h3>Mjolnir Laptop GetThored</h3>
+                        <p>1440x900, Windows 15, Intel Core i7</p>
+                        <p>Php 55,999</p>
+                        <button onclick="addToCart(8)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="laptop3.png" alt="Mjolnir Laptop: Stormbreaker V1">
+                    <div>
+                        <h3>Mjolnir Laptop: Stormbreaker V1</h3>
+                        <p>1680x1050, Windows 15, Intel Core i5</p>
+                        <p>Php 65,999</p>
+                        <button onclick="addToCart(9)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="laptop4.png" alt="Mjolnir Laptop: Stormbreaker V2">
+                    <div>
+                        <h3>Mjolnir Laptop: Stormbreaker V2</h3>
+                        <p>1680x1050, Windows 15, Intel Core i7</p>
+                        <p>Php 69,999</p>
+                        <button onclick="addToCart(10)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="laptop5.png" alt="Mjolnir Laptop: Hela">
+                    <div>
+                        <h3>Mjolnir Laptop: Hela</h3>
+                        <p>1920x1200, Windows 15, Intel Core i9</p>
+                        <p>Php 77,000</p>
+                        <button onclick="addToCart(11)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="laptop6.png" alt="Mjolnir Laptop: GetLokied">
+                    <div>
+                        <h3>Mjolnir Laptop: GetLokied</h3>
+                        <p>1920x1200, Windows 15, Intel Core i9</p>
+                        <p>Php 85,000</p>
+                        <button onclick="addToCart(12)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button onclick="toggleDropdown('tablets')">Tablets</button>
+            <div class="dropdown-content" id="tablets">
+
+                <div class="product">
+                    <img src="tablet1.png" alt="Universe Tab S69">
+                    <div>
+                        <h3>Universe Tab S69</h3>
+                        <p>12.4 inch Display, Front Camera: 12MP UW and Rear Camera: 13MP AF + 8MP UW + Flash, Android
+                            13</p>
+                        <p>Php 49,999</p>
+                        <button onclick="addToCart(1)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="tablet2.png" alt="Teeny-Weeny Mini Pad">
+                    <div>
+                        <h3>Teeny-Weeny Mini Pad</h3>
+                        <p>8.3-inch Display, 12MP Wide Camera & Ultra Wide Front Camera, 4K Video, A1 Bionic Chip, 256
+                            GB</p>
+                        <p>Php 39,950</p>
+                        <button onclick="addToCart(2)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="tablet3.png" alt="iTab 10+">
+                    <div>
+                        <h3>iTab 10+</h3>
+                        <p>10.9-inch Display, 12MP Wide Camera & Landscape Ultra Wide Front Camera, 4K Video, A14 Bionic
+                            Chip, 256 GB</p>
+                        <p>Php 33,000</p>
+                        <button onclick="addToCart(3)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="tablet4.png" alt="Elemental iTab">
+                    <div>
+                        <h3>Elemental iTab</h3>
+                        <p>13-inch model Display, 12MP Wide Camera & Landscape Ultra Wide Front Camera, 4K Video, M2
+                            Chip, 512 GB</p>
+                        <p>Php 62,450</p>
+                        <button onclick="addToCart(4)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="tablet5.png" alt="Pro Max Pad">
+                    <div>
+                        <h3>Pro Max Pad</h3>
+                        <p>11-inch model Display, 12MP Wide Camera & Landscape Ultra Wide Front Camera, 4K Video,
+                            ProRes, TrueDepth Camera System, M4 Chip, 1TB</p>
+                        <p>Php 115,000</p>
+                        <button onclick="addToCart(5)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="tablet6.png" alt="Ultra Pro Pad">
+                    <div>
+                        <h3>Ultra Pro Pad</h3>
+                        <p>13-inch model Display, 12MP Wide Camera & Landscape Ultra Wide Front Camera, 4K Video,
+                            ProRes, TrueDepth Camera System, M4 Chip, 2TB</p>
+                        <p>Php 129,550</p>
+                        <button onclick="addToCart(6)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button onclick="toggleDropdown('phones')">Phones</button>
+            <div class="dropdown-content" id="phones">
+
+                <div class="product">
+                    <img src="phone1.png" alt="Banana Phone 11">
+                    <div>
+                        <h3>Banana Phone 11</h3>
+                        <p>6.1 inch Display, Dual 12MP Ultra Wide & Wide Cameras, A13 Bionic Chip, 128GB</p>
+                        <p>Php 29, 500</p>
+                        <button onclick="addToCart(13)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="phone2.png" alt="Banana Phone 12">
+                    <div>
+                        <h3>Banana Phone 12</h3>
+                        <p>6.1 inch Display, Dual 12MP Ultra Wide & Wide Cameras, A14 Bionic Chip, 64GB</p>
+                        <p>Php 30,000</p>
+                        <button onclick="addToCart(14)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="phone3.png" alt="Banana Phone 13">
+                    <div>
+                        <h3>Banana Phone 13</h3>
+                        <p>6.1-inch Display, Dual 12MP Main and Ultra Wide Cameras, A15 Bionic Chip, 128 GB</p>
+                        <p>Php 35,000</p>
+                        <button onclick="addToCart(15)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="phone4.png" alt="Banana Phone 14 Plus">
+                    <div>
+                        <h3>Banana Phone 14 Plus</h3>
+                        <p>6.7-inch Display, Dual 12MP Main and Ultra Wide Cameras, A15 Bionic Chip with 5-core GPU, 256
+                            GB</p>
+                        <p>Php 49,999</p>
+                        <button onclick="addToCart(16)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="phone5.png" alt="Banana Phone 15">
+                    <div>
+                        <h3>Banana Phone 15</h3>
+                        <p>6.1-inch Display, Advanced Dual 48MP Main and Ultra Wide Cameras, A16 Bionic Chip with 5-core
+                            GPU, 512 GB</p>
+                        <p>Php 55,999</p>
+                        <button onclick="addToCart(17)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="phone6.png" alt="Banana Phone 15 Pro Max">
+                    <div>
+                        <h3>Banana Phone 15 Pro Max</h3>
+                        <p>6.7-inch Display, Pro 48MP Main and Ultra Wide Cameras and Telephoto, A17 Pro Chip with
+                            6-core GPU, 1TB</p>
+                        <p>Php 79,950</p>
+                        <button onclick="addToCart(18)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button onclick="toggleDropdown('earsets')">Headsets/Earsets</button>
+            <div class="dropdown-content" id="earsets">
+
+                <div class="product">
+                    <img src="earphone1.png" alt="AirPulse Z500">
+                    <div>
+                        <h3>AirPulse Z500</h3>
+                        <p>Sleek and Compact Earphones, With Deep Bass, Active Noise Cancellation, 24-hr battery life
+                        </p>
+                        <p>Php 3,499</p>
+                        <button onclick="addToCart(19)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="earphone2.png" alt="Sonic Flow XD">
+                    <div>
+                        <h3>Sonic Flow XD</h3>
+                        <p>Water Resistance, Secure Fit, High Sound Quality, 12-hr battery life</p>
+                        <p>Php 2,799</p>
+                        <button onclick="addToCart(20)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="earphone3.png" alt="EchoWave Max">
+                    <div>
+                        <h3>EchoWave Max</h3>
+                        <p>Advanced Bluetooth Connectivity, Ergonomic Design, Immersive Sound and Touch Controls</p>
+                        <p>Php 4,200</p>
+                        <button onclick="addToCart(21)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="earphone4.png" alt="QuantumVolt 10">
+                    <div>
+                        <h3>QuantumVolt 10</h3>
+                        <p>Adaptive Sound Techonolgy, Customizable Equalizer Setting, Premium Listening With Comfort</p>
+                        <p>Php 4,699</p>
+                        <button onclick="addToCart(22)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="earphone5.png" alt="AuraTune S9">
+                    <div>
+                        <h3>AuraTune S9</h3>
+                        <p>Minimalist Design, Superior Noise Cancellation, High-Quality Audio</p>
+                        <p>Php 3,900</p>
+                        <button onclick="addToCart(23)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="earphone6.png" alt="HeartBeat XP">
+                    <div>
+                        <h3>HeartBeat XP</h3>
+                        <p>Lightweight, Stylish, Superior Audio, Fast Charging</p>
+                        <p>Php 3,255</p>
+                        <button onclick="addToCart(24)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart">
+            <h3>Cart</h3>
+            <ul id="cart-items">
+            </ul>
+            <p id="total-amount">Total: Php 0</p>
+            <button onclick="checkout()">Checkout</button>
+        </div>
+
+        <div id="order-summary">
+            <h3>Order Summary</h3>
+            <div id="order-details">
+            </div>
+            <form class="checkout-form" onsubmit="submitOrder(event)">
+                <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+                <input type="text" id="address" name="address" placeholder="Address" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <button type="submit">Submit Order</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+        const products = {
+            1: { name: 'Universe Tab S69', price: 49999 },
+            2: { name: 'Teeny-Weeny Mini Pad', price: 39950 },
+            3: { name: 'iTab 10+', price: 33000 },
+            4: { name: 'Elemental iTab', price: 62450 },
+            5: { name: 'Pro Max Pad', price: 115000 },
+            6: { name: 'Ultra Pro Pad', price: 129550 },
+
+            7: { name: 'Mjolnir Laptop', price: 50999 },
+            8: { name: 'Mjolnir Laptop GetThored', price: 55999 },
+            9: { name: 'Mjolnir Laptop: Stormbreaker V1', price: 65999 },
+            10: { name: 'Mjolnir Laptop: Stormbreaker V2', price: 69999 },
+            11: { name: 'Mjolnir Laptop: Hela', price: 77000 },
+            12: { name: 'Mjolnir Laptop: GetLokied', price: 85000 },
+
+            13: { name: 'Banana Phone 11', price: 29500 },
+            14: { name: 'Banana Phone 12', price: 33000 },
+            15: { name: 'Banana Phone 13', price: 35000 },
+            16: { name: 'Banana Phone 14 Plus', price: 49999 },
+            17: { name: 'Banana Phone 15', price: 55999 },
+            18: { name: 'Banana Phone Pro Max', price: 79950 },
+
+            19: { name: 'AirPulse Z500', price: 3499 },
+            20: { name: 'Sonic Flow XD', price: 2799 },
+            21: { name: 'EchoWave Max', price: 4200 },
+            22: { name: 'QuantumVolt 10', price: 4699 },
+            23: { name: 'AuraTune S9', price: 3900 },
+            24: { name: 'HeartBeat XP', price: 3255 },
+        };
+
+        const cart = {};
+
+        function toggleDropdown(category) {
+            const dropdowns = document.querySelectorAll('.dropdown-content');
+            dropdowns.forEach(dropdown => {
+                if (dropdown.id === category) {
+                    dropdown.classList.toggle('show');
+                } else {
+                    dropdown.classList.remove('show');
+                }
+            });
+        }
+
+        function addToCart(productId) {
+            if (cart[productId]) {
+                cart[productId].quantity += 1;
+            } else {
+                cart[productId] = { ...products[productId], quantity: 1 };
+            }
+            updateCart();
+        }
+
+        function removeFromCart(productId) {
+            if (cart[productId]) {
+                if (cart[productId].quantity > 1) {
+                    cart[productId].quantity -= 1;
+                } else {
+                    delete cart[productId];
+                }
+                updateCart();
+            }
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            const totalAmount = document.getElementById('total-amount');
+            cartItems.innerHTML = '';
+            let total = 0;
+            for (const productId in cart) {
+                const item = cart[productId];
+                total += item.price * item.quantity;
+                cartItems.innerHTML += `
+      <li>
+        ${item.name} - Php ${item.price} x ${item.quantity}
+        <button onclick="removeFromCart(${productId})">Remove</button>
+      </li>
+    `;
+            }
+            totalAmount.innerText = `Total: Php ${total}`;
+        }
+
+        function checkout() {
+            const orderSummary = document.getElementById('order-summary');
+            const orderDetails = document.getElementById('order-details');
+            orderDetails.innerHTML = '';
+            for (const productId in cart) {
+                const item = cart[productId];
+                orderDetails.innerHTML += `
+      <p>${item.name} - Php ${item.price} x ${item.quantity}</p>
+    `;
+            }
+            orderSummary.style.display = 'block';
+        }
+
+        function submitOrder(event) {
+            event.preventDefault();
+            const fullname = document.getElementById('fullname').value;
+            const address = document.getElementById('address').value;
+            const email = document.getElementById('email').value;
+
+            const cartItems = [];
+            for (const productId in cart) {
+                const item = cart[productId];
+                cartItems.push({ prod_name: item.name, prod_price: item.price });
+            }
+
+            const cust_order = JSON.stringify(cartItems);
+
+            const queryParams = new URLSearchParams({
+                cust_name: fullname,
+                cust_addr: address,
+                cust_email: email,
+                cust_order: cust_order
+            });
+
+            const url = `http://sirjm.infinityfreeapp.com/checkout.php?${queryParams.toString()}`;
+
+            window.location.href = url;
+        }
+    </script>
+</body>
+
+</html>
